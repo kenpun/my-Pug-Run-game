@@ -63,6 +63,13 @@ class Game {
             barrier.draw()
         })
 
+        this.barriers = this.barriers.filter(barrier => {
+            if (barrier.collision(this.player) || barrier.x < 0 - barrier.width) {
+                return false
+            } else {
+                return true
+            }
+        })
 
         // status bar
         fill(255); 
