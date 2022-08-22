@@ -23,8 +23,12 @@ class Barrier {
             // attempted game over condition
             game.player.score -= 10
             console.log(game.player.score);
-            if (game.player.score == -50) {
-                game.player.gameOver = true;
+            if (game.player.score == -10) {
+                console.log('game over');
+                fill(255)
+                textSize(50)
+                text('GAME OVER, try again', 300, 300)
+                noLoop();
             
             } 
             return true
