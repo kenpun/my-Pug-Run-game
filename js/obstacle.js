@@ -21,14 +21,14 @@ class Obstacle {
             return false
         } else {
             // 
-            // game.player.score += 10
-            // console.log(game.player.score);
+            game.player.score += 10
+            console.log(game.player.score);
             return true
         }
     }
 
     draw() {
         this.x--
-        image(this.image, this.x, this.y, this.width, this.height)
+        image(this.image, this.x, this.y, this.width, this.height);
     }
 }

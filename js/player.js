@@ -27,7 +27,7 @@ class Player {
     }
 
     jump() {
-        console.log('jump');
+        // console.log('jump');
         this.velocity = - 10 // possible to wrap this in an if condition and only
         // execute if player is not jumping.
         // once jump is pressed set this to true and set when to false when back

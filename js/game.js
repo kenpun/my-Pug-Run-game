@@ -3,7 +3,8 @@ class Game {
     setup() {
         this.player = new Player()
         this.background = new Background()
-        this.obstacles = []
+        this.obstacles = [];
+        textAlign(CENTER);
     }
     
     constructor() {
@@ -32,7 +33,7 @@ class Game {
         // obstacles
         if (frameCount % 10 === 0) {
             this.obstacles.push(new Obstacle(this.puppyImage))
-            console.log(this.obstacles);
+            // console.log(this.obstacles);
         }
         // iterate over the obstacles array and call the draw function
         // for every obstacle inside
@@ -40,7 +41,6 @@ class Game {
             obstacle.draw()
         })
 
-        
         this.obstacles = this.obstacles.filter(obstacle => {
             if (obstacle.collision(this.player) || obstacle.x < 0 - obstacle.width) {
                 return false
@@ -49,5 +49,11 @@ class Game {
             }
         })
         
+        // status bar
+        fill(255); 
+        textSize(20);
+        text('score:', 50, 35);
+        text(game.player.score, 100, 35);
+
     }
 }
