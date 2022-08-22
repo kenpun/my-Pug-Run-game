@@ -1,10 +1,13 @@
 class Obstacle {
     constructor(image) {
+        this.velocity = 0
+        this.gravity = 0.2
         this.image = image
         this.x = width // this 
         this.y = (Math.random() * height) / 2.5 // this determines the height at which the obstacle appears
-        this.width = 50
-        this.height = 50
+        this.width = 80
+        this.height = 80
+
     }
 
     collision(playerInfo) {
@@ -29,6 +32,17 @@ class Obstacle {
 
     draw() {
         this.x--
+
+        this.velocity += this.gravity
+        this.y += this.velocity
+        // if dog moves lower than the bottom of the canvas we need to correct 
+        // it's position
+        if (this.y >= height - this.height) {
+            // reset to it's starting position
+            this.y = height - this.height;
+
+        }
+
         image(this.image, this.x, this.y, this.width, this.height);
     }
 }

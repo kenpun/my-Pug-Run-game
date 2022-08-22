@@ -3,10 +3,11 @@ class Player {
     constructor() {
         // jumping true or false
         this.score = 0;
+        this.gameOver = false
         this.velocity = 0
         this.gravity = 0.2
-        this.width = 100;
-        this.height = 140;
+        this.width = 120;
+        this.height = 120;
         this.x = 0;
         this.y = height - this.height;
         

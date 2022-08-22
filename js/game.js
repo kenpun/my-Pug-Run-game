@@ -34,7 +34,7 @@ class Game {
         // here we add obstacles array
         // frameCount - this is provided by p5 determining the spacing between
         // obstacles
-        if (frameCount % 10 === 0) {
+        if (frameCount % 90 === 0) {
             this.obstacles.push(new Obstacle(this.puppyImage))
             // console.log(this.obstacles);
         }

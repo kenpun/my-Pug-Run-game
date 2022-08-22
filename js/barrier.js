@@ -13,16 +13,20 @@ class Barrier {
         const playerX = playerInfo.x + playerInfo.width / 2
         const playerY = playerInfo.y + playerInfo.height / 2
         // get the middle of the obstacle
-        const obstacleX = this.x + this.width / 2
-        const obstacleY = this.y + this.height / 2
+        const barrierX = this.x + this.width / 2
+        const barrierY = this.y + this.height / 2
         //  measure the distance between obstacle and player
-        if (dist(obstacleX, obstacleY, playerX, playerY) > 25) {
+        if (dist(barrierX, barrierY, playerX, playerY) > 25) {
             // this is not a collision
             return false
         } else {
-            // 
+            // attempted game over condition
             game.player.score -= 10
             console.log(game.player.score);
+            if (game.player.score == -50) {
+                game.player.gameOver = true;
+            
+            } 
             return true
         }
     }
