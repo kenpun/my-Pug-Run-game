@@ -4,12 +4,14 @@ class Game {
         this.player = new Player()
         this.background = new Background()
         this.obstacles = [];
+        this.barriers = [];
         textAlign(CENTER);
     }
     
     constructor() {
         this.backgroundImages
         this.puppyImage
+        this.mushroomImage
     }
     
     preload() {
@@ -20,6 +22,7 @@ class Game {
         ]
         this.playerImage = loadImage('assets/player/pixel-pug-dog.gif')
         this.puppyImage = loadImage('assets/obstacle/pixel-pug-dog.gif')
+        this.mushroomImage = loadImage('assets/obstacle/pixel-mushroom.gif') 
     }
 
 
@@ -49,6 +52,18 @@ class Game {
             }
         })
         
+
+        if (frameCount % 60 === 0) {
+            this.barriers.push(new Barrier(this.mushroomImage))
+            // console.log(this.barriers);
+        }
+        // iterate over the barriers array and call the draw function
+        // for every barrier inside
+        this.barriers.forEach(function(barrier) {
+            barrier.draw()
+        })
+
+
         // status bar
         fill(255); 
         textSize(20);
