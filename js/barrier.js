@@ -3,8 +3,9 @@ class Barrier {
         this.image = image
         this.x = width // this 
         this.y = (Math.random() * height) / 1.1 // this determines the height at which the obstacle appears
-        this.width = 50
-        this.height = 50
+        this.width = 30;
+        this.height = 30;
+        //this.gameOver = false;
     }
 
     collision(playerInfo) {
@@ -20,24 +21,31 @@ class Barrier {
             // this is not a collision
             return false
         } else {
-            // attempted game over condition
             game.player.score -= 10
-            console.log(game.player.score);
+            // console.log(game.player.score);
             if (game.player.score == -10) {
-                console.log('game over');
-                fill(255)
-                textSize(50)
-                text('GAME OVER, try again', 300, 300)
-                noLoop();
-            
-            } 
+                this.gameOver()
+            }
+        } 
             return true
-        }
     }
-
+    
     draw() {
         this.x--
         image(this.image, this.x, this.y, this.width, this.height);
+    }
+
+    gameOver() {
+        console.log("GAME OVER");
+            fill(0, 0, 0, 100);
+            rect(0, 0, width, height)
+            textAlign(CENTER)
+            textSize(50)
+            fill(255)
+            text('GAME OVER', width / 2, height / 2 - 40)
+            text('Score = ' + game.player.score, width / 2, height / 2 + 20)
+            noLoop() // game is over, stop game
+        
     }
 
 }

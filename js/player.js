@@ -3,11 +3,10 @@ class Player {
     constructor() {
         // jumping true or false
         this.score = 0;
-        this.gameOver = false
         this.velocity = 0
         this.gravity = 0.4 
-        this.width = 200;
-        this.height = 200;
+        this.width = 170;
+        this.height = 170;
         this.x = 0;
         this.y = height - this.height;
         
@@ -33,16 +32,20 @@ class Player {
             // the position of the player is at the bottom
             this.velocity = - 15
         }
-         // possible to wrap this in an if condition and only
+        // possible to wrap this in an if condition and only
         // execute if player is not jumping.
         // once jump is pressed set this to true and set when to false when back
         // on the ground i.e. starting position
     }
 
+
+    
+
     moveRight() {
         console.log('move right');
-        if (this.x == width - this.width) {
-            this.velocity =  5
-        }
+        
+        // if (this.x == width - this.width) {
+        //     this.velocity =  5
+        // }
     }
 }

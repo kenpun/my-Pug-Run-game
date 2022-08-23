@@ -18,9 +18,11 @@ function keyPressed() {
         // make the player jump
         game.player.jump()
     }
-    if (keyCode === 39) {
-        // make the player move right
-        game.player.moveRight
+
+    if (keyCode === 82) {
+        console.log('reset');
+        location.reload();
     }
 
 }
+

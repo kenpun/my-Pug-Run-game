@@ -5,7 +5,7 @@ class Game {
         this.background = new Background()
         this.obstacles = [];
         this.barriers = [];
-        textAlign(CENTER);
+        let isGameOver = false;
     }
     
     constructor() {
@@ -22,9 +22,8 @@ class Game {
         ]
         this.playerImage = loadImage('assets/player/pixel-pug-dog.gif')
         this.puppyImage = loadImage('assets/obstacle/pixel-pug-dog.gif')
-        this.mushroomImage = loadImage('assets/obstacle/pixel-mushroom.gif') 
+        this.mushroomImage = loadImage('assets/obstacle/pixel-mushroom.gif')        
     }
-
 
     draw() {
         // console.log('game drawing');
@@ -71,11 +70,14 @@ class Game {
             }
         })
 
-        // status bar
+        // score
         fill(255); 
+        textAlign(CENTER);
         textSize(20);
-        text('score:', 50, 35);
+        //textFont('Georgia')
+        text('SCORE: ', 50, 35);
         text(game.player.score, 100, 35);
-
-    }
+        
+        }
+    
 }
