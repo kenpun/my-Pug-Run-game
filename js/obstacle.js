@@ -31,11 +31,11 @@ class Obstacle {
     }
 
     draw() {
-        this.x--
+        this.x -= 5;
 
         this.velocity += this.gravity
         this.y += this.velocity
-        // if dog moves lower than the bottom of the canvas we need to correct 
+        // if obstacle moves lower than the bottom of the canvas we need to correct 
         // it's position
         if (this.y >= height - this.height) {
             // reset to it's starting position

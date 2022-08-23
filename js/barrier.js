@@ -3,8 +3,8 @@ class Barrier {
         this.image = image
         this.x = width // this 
         this.y = (Math.random() * height) / 1.1 // this determines the height at which the obstacle appears
-        this.width = 30;
-        this.height = 30;
+        this.width = 50;
+        this.height = 50;
         //this.gameOver = false;
     }
 
@@ -25,6 +25,7 @@ class Barrier {
             // console.log(game.player.score);
             if (game.player.score == -10) {
                 this.gameOver()
+                
             }
         } 
             return true
@@ -39,10 +40,11 @@ class Barrier {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(40)
+        textSize(20)
         fill(255)
         text("GAME OVER Score = " + game.player.score, width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)
+        this.gameOverSong.play()
         noLoop() // game is over, stop game
         
     }
