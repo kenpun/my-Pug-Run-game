@@ -3,13 +3,12 @@ class Player {
     constructor() {
         // jumping true or false
         this.score = 0;
-        this.velocity = 0
+        this.velocity = 0;
         this.gravity = 0.4 
         this.width = 170;
         this.height = 170;
         this.x = 0;
         this.y = height - this.height;
-        
     }
     
     draw() {
@@ -28,7 +27,8 @@ class Player {
 
     jump() {
         // console.log('jump');
-        if (this.y == height - this.height) { // will only allow jumping when at the
+        if (this.y == height - this.height) { 
+            // will only allow jumping when at the
             // the position of the player is at the bottom
             this.velocity = - 15
         }
@@ -38,14 +38,13 @@ class Player {
         // on the ground i.e. starting position
     }
 
-
-    
-
     moveRight() {
-        console.log('move right');
-        
-        // if (this.x == width - this.width) {
-        //     this.velocity =  5
-        // }
+        this.x += 100;
+        if (this.x < 0) this.x = 0
+    }
+
+    moveLeft() {
+        this.x -= 100;
+        if (this.x < 0) this.x = 0;
     }
 }

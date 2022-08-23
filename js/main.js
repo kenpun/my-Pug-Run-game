@@ -14,14 +14,23 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode === 32) {
+    if (keyCode === 38) {
         // make the player jump
         game.player.jump()
     }
 
     if (keyCode === 82) {
-        console.log('reset');
+        // game reset
         location.reload();
+    }
+
+    if (keyCode === 39) {
+        //console.log('right arrow');
+        game.player.moveRight()
+    }
+
+    if (keyCode === 37) {
+        game.player.moveLeft()
     }
 
 }

@@ -36,15 +36,14 @@ class Barrier {
     }
 
     gameOver() {
-        console.log("GAME OVER");
-            fill(0, 0, 0, 100);
-            rect(0, 0, width, height)
-            textAlign(CENTER)
-            textSize(50)
-            fill(255)
-            text('GAME OVER', width / 2, height / 2 - 40)
-            text('Score = ' + game.player.score, width / 2, height / 2 + 20)
-            noLoop() // game is over, stop game
+        fill(0, 0, 0, 100);
+        rect(0, 0, width, height)
+        textAlign(CENTER)
+        textSize(40)
+        fill(255)
+        text("GAME OVER Score = " + game.player.score, width / 2, height / 2 - 40)
+        text("press 'r' to replay", width / 2, height / 2 + 20)
+        noLoop() // game is over, stop game
         
     }
 
