@@ -40,7 +40,7 @@ class Barrier {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(20)
+        textSize(30)
         fill(255)
         text("GAME OVER Score = " + game.player.score, width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)

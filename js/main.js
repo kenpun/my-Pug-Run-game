@@ -24,6 +24,10 @@ function keyPressed() {
         location.reload();
     }
 
+    if (keyCode === 32){
+        game.playMode = !game.playMode
+    }
+
     if (keyCode === 39) {
         //console.log('right arrow');
         game.player.moveRight()
@@ -32,5 +36,6 @@ function keyPressed() {
     if (keyCode === 37) {
         game.player.moveLeft()
     }
+
 
 }

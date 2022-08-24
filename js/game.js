@@ -6,7 +6,7 @@ class Game {
         this.obstacles = [];
         this.barriers = [];
         textFont(this.arcadeFont);
-        let playing = true;
+        this.playMode = true;
     }
 
     constructor() {
@@ -33,9 +33,8 @@ class Game {
 
     draw() {
         // console.log('game drawing');
-    
-        clear()
-
+        //clear()
+        if (this.playMode){
         this.background.draw()
         //this.backgroundSong.play()
         //this.gameOverSong.play()
@@ -80,11 +79,19 @@ class Game {
             }
         })
 
+        }   else {
+            //background()
+            fill(106, 13, 173, 255);
+            rect(0, 0, width, height);
+            fill(255)
+            textSize(40)
+            text('GAME PAUSED', width / 2, width / 2)
+        }
+
         // score
         fill(255);
         textAlign(CENTER);
         textSize(20);
-        //textFont('Georgia')
         text('SCORE: ', 100, 35);
         text(game.player.score, 200, 35);
 
