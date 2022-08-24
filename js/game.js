@@ -1,22 +1,14 @@
 class Game {
 
-    setup() {
-        this.player = new Player()
-        this.background = new Background()
-        this.obstacles = [];
-        this.barriers = [];
-        textFont(this.arcadeFont);
-        this.playMode = true;
-    }
-
     constructor() {
         this.backgroundImages
         this.puppyImage
         this.mushroomImage
         this.backgroundSong
         this.arcadeFont
+        //this.gameOverSong
     }
-
+    
     preload() {
         this.backgroundImages = [
             { src: loadImage('assets/background/plx-1.png'), x: 0, speed: 0 },
@@ -27,27 +19,47 @@ class Game {
         this.puppyImage = loadImage('assets/obstacle/pixel-pug-dog.gif')
         this.mushroomImage = loadImage('assets/obstacle/peanut_butter.png')
         this.backgroundSong = new Audio('assets/sound/fire-in-the-hole.mp3')
-        this.gameOverSong = new Audio('assets/sound/game-over.mp3')
         this.arcadeFont = loadFont('assets/font/arcadefont.TTF')
+    }
+    
+    setup() {
+        this.player = new Player()
+        this.background = new Background()
+        this.obstacles = [];
+        this.barriers = [];
+        textFont(this.arcadeFont);
+        this.playMode = true;
+        this.slider = createSlider(0, 1, 0.5, 0.01)
+        this.button = createButton("play"); // creates button
+        //this.button.mousePressed(togglePlaying) // add mousePress to toggle play and pause
+    }
+
+    togglePlaying() {
+        if (!this.gameOverSong.isPlaying()) {
+            this.gameOverSong.play();
+            this.gameOverSong.setVolume(0.5);
+            button.html("pause");
+        } else {
+            this.gameOverSong.pause();
+            button.html("play");
+        }
     }
 
     draw() {
         // console.log('game drawing');
         //clear()
-        if (this.playMode){
+        
+        if (this.playMode){ // adds the pause and play effect
         this.background.draw()
-        //this.backgroundSong.play()
-        //this.gameOverSong.play()
+        this.backgroundSong.play()
+        //this.backgroundSong.setVolume(this.slider.value());
         this.player.draw()
         // here we add obstacles array
-        // frameCount - this is provided by p5 determining the spacing between
-        // obstacles
+        // frameCount - this is provided by p5 determining the spacing between obstacles
         if (frameCount % 100 === 0) {
             this.obstacles.push(new Obstacle(this.puppyImage))
-            // console.log(this.obstacles);
         }
-        // iterate over the obstacles array and call the draw function
-        // for every obstacle inside
+        // iterate over the obstacles array and call the draw function for every obstacle inside
         this.obstacles.forEach(function(obstacle) {
             obstacle.draw()
         })
@@ -63,10 +75,8 @@ class Game {
 
         if (frameCount % 100 === 0) {
             this.barriers.push(new Barrier(this.mushroomImage))
-            // console.log(this.barriers);
         }
-        // iterate over the barriers array and call the draw function
-        // for every barrier inside
+        // iterate over the barriers array and call the draw function for every barrier inside
         this.barriers.forEach(function(barrier) {
             barrier.draw()
         })
@@ -79,13 +89,14 @@ class Game {
             }
         })
 
-        }   else {
+        }   else { // here is the end of the playMode condition
             //background()
             fill(106, 13, 173, 255);
             rect(0, 0, width, height);
             fill(255)
             textSize(40)
             text('GAME PAUSED', width / 2, width / 2)
+            this.backgroundSong.pause()
         }
 
         // score
@@ -98,6 +109,6 @@ class Game {
         
     }
 
-
+    
 
 }
