@@ -26,6 +26,11 @@ class Obstacle {
             // 
             game.player.score += 10
             console.log(game.player.score);
+
+            if (game.player.score == 50) {
+                this.gameWon()
+            }
+
             return true
         }
     }
@@ -44,5 +49,16 @@ class Obstacle {
         }
 
         image(this.image, this.x, this.y, this.width, this.height);
+    }
+
+    gameWon(){
+        fill(0, 0, 0, 100);
+        rect(0, 0, width, height)
+        textAlign(CENTER)
+        textSize(30)
+        fill(255)
+        text("YOU WIN Score = " + game.player.score, width / 2, height / 2 - 40)
+        text("press 'r' to replay", width / 2, height / 2 + 20)
+        noLoop()
     }
 }
