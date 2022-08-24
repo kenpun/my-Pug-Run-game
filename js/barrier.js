@@ -21,6 +21,9 @@ class Barrier {
             return false
         } else {
             game.player.score -= 10
+
+            
+
             // console.log(game.player.score);
             if (game.player.score == -10) {
                 this.gameOver();

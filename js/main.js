@@ -25,15 +25,17 @@ function keyPressed() {
     }
 
     if (keyCode === 32){
+        // pause and play game
         game.playMode = !game.playMode
     }
 
     if (keyCode === 39) {
-        //console.log('right arrow');
+        // move player right
         game.player.moveRight()
     }
 
     if (keyCode === 37) {
+        // move player left
         game.player.moveLeft()
     }
 

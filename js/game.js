@@ -19,7 +19,7 @@ class Game {
         this.playerImage = loadImage('assets/player/pixel-pug-dog.gif')
         this.puppyImage = loadImage('assets/obstacle/pixel-pug-dog.gif')
         this.mushroomImage = loadImage('assets/obstacle/peanut_butter.png')
-        this.backgroundSong = new Audio('assets/sound/fire-in-the-hole.mp3') 
+
     }
     
     setup() {
@@ -29,25 +29,28 @@ class Game {
         this.barriers = [];
         textFont(this.arcadeFont);
         this.playMode = true;
+        this.backgroundSong = new Audio('assets/sound/fire-in-the-hole.mp3') 
+        noFill();
+        stroke(0)
+        strokeWeight(15);
+        rect(width/2, height/2, width, height)
         //this.slider = createSlider(0, 1, 0.5, 0.01)
     }
  
     draw() {
         // console.log('game drawing');
         //clear()
-        
-
         if (this.playMode){ // adds the pause and play effect
             this.backgroundSong.play()
             this.background.draw()
-        
+            // this.box.draw()
             this.player.draw()
             // here we add obstacles array
             // frameCount - this is provided by p5 determining the spacing between obstacles
             if (frameCount % 100 === 0) {
             this.obstacles.push(new Obstacle(this.puppyImage))
             }
-        // iterate over the obstacles array and call the draw function for every obstacle inside
+            // iterate over the obstacles array and call the draw function for every obstacle inside
             this.obstacles.forEach(function(obstacle) {
             obstacle.draw()
             })
@@ -76,6 +79,7 @@ class Game {
                     return true
                 }
             })
+
 
         } else { // here is the end of the playMode condition
             //background()
