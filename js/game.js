@@ -89,8 +89,8 @@ class Game {
         fill(255);
         textAlign(CENTER);
         textSize(20);
-        text('SCORE: ', 100, 35);
-        text(game.player.score, 200, 35);
+        text('SCORE: ', 90, 40);
+        text(game.player.score, 170, 40);
 
         
     }

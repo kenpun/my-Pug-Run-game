@@ -17,11 +17,10 @@ function windowResized() {
 function draw() {
     clear();
     if (mode == 0) {
-        
         fill(255)
         textAlign(CENTER);
         textSize(30)
-        text('Press ENTER to start', width / 2, height / 2)
+        text('Press ENTER to start', width / 2, height / 2) // start screen
     }
     if (mode == 1) {
     game.draw()

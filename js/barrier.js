@@ -3,8 +3,8 @@ class Barrier {
         this.image = image
         this.x = width // this 
         this.y = (Math.random() * height) / 1.1 // this determines the height at which the obstacle appears
-        this.width = 50;
-        this.height = 50;
+        this.width = 80;
+        this.height = 80;
     }
 
     collision(playerInfo) {
@@ -41,9 +41,9 @@ class Barrier {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(30)
+        textSize(20)
         fill(255)
-        text("GAME OVER Score = " + game.player.score, width / 2, height / 2 - 40)
+        text("Peanut Butter distracted you", width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)
         //this.gameOverSong.play() // have a different sound playing at gameover
         noLoop() // game is over, stop game

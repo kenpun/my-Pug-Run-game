@@ -27,7 +27,7 @@ class Obstacle {
             game.player.score += 10
             console.log(game.player.score);
 
-            if (game.player.score == 10) {
+            if (game.player.score == 50) {
                 this.gameWon()
             }
 
@@ -55,9 +55,9 @@ class Obstacle {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(30)
+        textSize(15)
         fill(255)
-        text("YOU WIN Score = " + game.player.score, width / 2, height / 2 - 40)
+        text("That's enough puppies, Score = " + game.player.score, width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)
         noLoop()
     }
