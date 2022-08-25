@@ -6,7 +6,11 @@ function preload() {
 
 function setup() {
     mode = 0;
-    createCanvas(900, 600);
+    let cnv = createCanvas(900, 600);
+    // let x = (windowWidth - width / 2)
+    // let y = (windowHeight - height / 2)
+    // cnv.position(x, y);
+    cnv.parent('sketch-holder');
     game.setup()
 }
 

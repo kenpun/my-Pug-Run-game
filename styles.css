@@ -1,15 +1,19 @@
 header {
     display: flex;
     flex-direction: row;
-    margin-bottom: 50px;
+    margin-bottom: -30px;
 }
 
 #dogsLeft {
     padding-right: 50px;
+    height: 100px;
+    margin-top: 25px;
 }
 
 #dogsRight {
     padding-left: 50px;
+    height: 100px;
+    margin-top: 25px;
 }
 
 h1 {
@@ -21,13 +25,13 @@ h1 {
 
 .info {
     font-family: 'Silkscreen', cursive;
-    font-size: 24px;
+    font-size: 30px;
     text-align: center;
-    margin: -70px 120px;
+    margin-top: -5px;
+    margin-bottom: 5px;
     display: flex;
-    justify-content: flex-start;
-    width: 900px;
-    height: 250px;
+    width: 2empx;
+    height: 1500px;
 }
 
 html, body {
