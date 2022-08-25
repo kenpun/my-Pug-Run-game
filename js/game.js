@@ -76,14 +76,13 @@ class Game {
 
 
         } else { // here is the end of the playMode condition
-            //background()
             fill(106, 13, 173, 255);
             rect(0, 0, width, height);
             fill(255)
             textSize(40)
             text('GAME PAUSED', width / 2, width / 2)
             this.backgroundSong.pause()
-        }
+        } // close pause state
 
         // score
         fill(255);

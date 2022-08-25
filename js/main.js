@@ -6,17 +6,19 @@ function preload() {
 
 function setup() {
     mode = 0;
-    createCanvas(700, 700);
+    createCanvas(900, 700);
     game.setup()
 }
 
 function windowResized() {
-    resizeCanvas(700, 700)
+    resizeCanvas(900, 700)
 }
 
 function draw() {
     clear();
     if (mode == 0) {
+        fill(106, 13, 173, 255);
+        rect(0, 0, width, height);
         fill(255)
         textAlign(CENTER);
         textSize(30)
