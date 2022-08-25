@@ -1,7 +1,13 @@
 h1 {
-    font-family: 'ArcadeClassic', sans-serif;
-    font-size: 80px;             
+    font-family: 'Arcade Rounded', sans-serif;
+    font-size: 50px;             
     text-align: center;                                  
+}
+
+.info {
+    font-family: 'Arcade Normal', sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
 
 html, body {

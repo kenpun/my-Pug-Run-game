@@ -5,6 +5,7 @@ function preload() {
 }
 
 function setup() {
+    mode = 0;
     createCanvas(700, 700);
     game.setup()
 }
@@ -14,10 +15,24 @@ function windowResized() {
 }
 
 function draw() {
+    clear();
+    if (mode == 0) {
+        
+        fill(255)
+        textAlign(CENTER);
+        textSize(30)
+        text('Press ENTER to start', width / 2, height / 2)
+    }
+    if (mode == 1) {
     game.draw()
+    }
 }
 
 function keyPressed() {
+    if (keyCode === 13) {
+        mode = 1;
+    }
+    
     if (keyCode === 38) {
         // make the player jump
         game.player.jump()
@@ -46,5 +61,6 @@ function keyPressed() {
     if (keyCode === 40) {
         game.player.moveDown()
     }
+
 
 }

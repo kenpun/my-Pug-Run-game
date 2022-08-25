@@ -6,7 +6,6 @@ class Game {
         this.peanutButterImage
         this.backgroundSong
         this.arcadeFont
-        this.button
     }
     
     preload() {
@@ -33,7 +32,6 @@ class Game {
         stroke(0)
         strokeWeight(15);
         rect(width/2, height/2, width, height)
-        //this.slider = createSlider(0, 1, 0.5, 0.01)
     }
  
     draw() {
