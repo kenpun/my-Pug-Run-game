@@ -1,12 +1,10 @@
 class Obstacle {
     constructor(image) {
-        this.velocity = 0
-        this.gravity = 0.2
         this.image = image
         this.x = width // this 
-        this.y = (Math.random() * height) / 2.5 // this determines the height at which the obstacle appears
-        this.width = 80
-        this.height = 60
+        this.y = (Math.random() * height) / 1.1 // this determines the height at which the obstacle appears
+        this.width = 80;
+        this.height = 80;
     }
 
     collision(playerInfo) {
@@ -22,40 +20,28 @@ class Obstacle {
             // this is not a collision
             return false
         } else {
-            // 
-            game.player.score += 10
-
-            if (game.player.score == 50) {
-                this.gameWon()
-            }
-            return true
+            game.player.score -= 10
+            if (game.player.score == -10) {
+                this.gameOver();
+            } // game over condition is true
         } 
-    } // close collision
-
+            return true
+    }
+    
     draw() {
-        this.x -= 10; // the speed at which they cross the screen horizontally
-
-        this.velocity += this.gravity
-        this.y += this.velocity
-        // if obstacle moves lower than the bottom of the canvas we need to correct 
-        // it's position
-        if (this.y >= height - this.height) {
-            // reset to it's starting position
-            this.y = height - this.height;
-
-        } // close draw
-
+        this.x -= 5; 
         image(this.image, this.x, this.y, this.width, this.height);
     }
 
-    gameWon(){
+    gameOver() {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(25)
+        textSize(30)
         fill(255)
-        text("That's enough puppies, Score = " + game.player.score, width / 2, height / 2 - 40)
+        text("Peanut Butter distracted you", width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)
-        noLoop()
-    } // close game won 
+        noLoop() // game is over, stop game
+    }
+
 }

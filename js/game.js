@@ -4,7 +4,7 @@ class Game {
         this.backgroundImages
         this.puppyImage
         this.peanutButterImage
-        //this.backgroundSong
+        this.obstacle
     }
     
     preload() {
@@ -22,8 +22,8 @@ class Game {
     setup() {
         this.player = new Player()
         this.background = new Background()
+        this.collectables = [];
         this.obstacles = [];
-        this.barriers = [];
         textFont(this.arcadeFont);
         this.playMode = true;
         this.backgroundSong = new Audio('assets/sound/fire-in-the-hole.mp3') 
@@ -42,15 +42,15 @@ class Game {
             // here we add obstacles array
             // frameCount - this is provided by p5 determining the spacing between obstacles
             if (frameCount % 150 === 0) {
-            this.obstacles.push(new Obstacle(this.puppyImage))
+            this.collectables.push(new Collectable(this.puppyImage))
             }
             // iterate over the obstacles array and call the draw function for every obstacle inside
-            this.obstacles.forEach(function(obstacle) {
-            obstacle.draw()
+            this.collectables.forEach(function(collectable) {
+            collectable.draw()
             })
 
-            this.obstacles = this.obstacles.filter(obstacle => {
-                if (obstacle.collision(this.player) || obstacle.x < 0 - obstacle.width) {
+            this.collectables = this.collectables.filter(collectable => {
+                if (collectable.collision(this.player) || collectable.x < 0 - collectable.width) {
                     return false
                 } else {
                     return true
@@ -58,15 +58,15 @@ class Game {
             })
 
             if (frameCount % 20 === 0) {
-                this.barriers.push(new Barrier(this.peanutButterImage))
+                this.obstacles.push(new Obstacle(this.peanutButterImage))
             }
-            // iterate over the barriers array and call the draw function for every barrier inside
-            this.barriers.forEach(function(barrier) {
-                barrier.draw()
+            // iterate over the obstacles array and call the draw function for every obstacle inside
+            this.obstacles.forEach(function(obstacle) {
+                obstacle.draw()
             })
 
-            this.barriers = this.barriers.filter(barrier => {
-                if (barrier.collision(this.player) || barrier.x < 0 - barrier.width) {
+            this.obstacles = this.obstacles.filter(obstacle => {
+                if (obstacle.collision(this.player) || obstacle.x < 0 - obstacle.width) {
                     return false
                 } else {
                     return true
@@ -79,7 +79,7 @@ class Game {
             rect(0, 0, width, height);
             fill(255)
             textSize(40)
-            text('GAME PAUSED', width / 2, width / 2)
+            text('GAME PAUSED', width / 2, height / 2)
             this.backgroundSong.pause()
         } // close pause state
 
