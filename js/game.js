@@ -16,8 +16,8 @@ class Game {
             { src: loadImage('assets/background/plx-3.png'), x: 0, speed: 2 }
         ]
         this.arcadeFont = loadFont('assets/font/arcadefont.TTF')
-        this.playerImage = loadImage('assets/player/pixel-pug-dog.gif')
-        this.puppyImage = loadImage('assets/obstacle/pixel-pug-dog.gif')
+        this.playerImage = loadImage('assets/player/resized-pug.gif')
+        this.puppyImage = loadImage('assets/obstacle/resized-pug.gif')
         this.mushroomImage = loadImage('assets/obstacle/peanut_butter.png')
 
     }

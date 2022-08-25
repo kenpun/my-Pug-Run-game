@@ -5,8 +5,8 @@ class Player {
         this.score = 0;
         this.velocity = 0;
         this.gravity = 0.4
-        this.width = 170;
-        this.height = 170;
+        this.width = 140;
+        this.height = 100;
         this.x = 0;
         this.y = height - this.height;
     }
