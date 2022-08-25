@@ -3,6 +3,14 @@ header {
     flex-direction: row;
 }
 
+#dogsLeft {
+    padding-right: 50px;
+}
+
+#dogsRight {
+    padding-left: 50px;
+}
+
 h1 {
     font-family: 'Arcade Rounded', sans-serif;
     font-size: 50px;             

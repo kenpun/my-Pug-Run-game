@@ -55,7 +55,7 @@ class Obstacle {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(15)
+        textSize(25)
         fill(255)
         text("That's enough puppies, Score = " + game.player.score, width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)

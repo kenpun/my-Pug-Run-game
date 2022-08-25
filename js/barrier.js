@@ -21,13 +21,9 @@ class Barrier {
             return false
         } else {
             game.player.score -= 10
-
-            
-
-            // console.log(game.player.score);
             if (game.player.score == -10) {
                 this.gameOver();
-            }
+            } // game over condition is true
         } 
             return true
     }
@@ -41,13 +37,11 @@ class Barrier {
         fill(0, 0, 0, 100);
         rect(0, 0, width, height)
         textAlign(CENTER)
-        textSize(20)
+        textSize(30)
         fill(255)
         text("Peanut Butter distracted you", width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)
-        //this.gameOverSong.play() // have a different sound playing at gameover
         noLoop() // game is over, stop game
-        
     }
 
 }
