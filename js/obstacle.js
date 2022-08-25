@@ -7,7 +7,6 @@ class Obstacle {
         this.y = (Math.random() * height) / 2.5 // this determines the height at which the obstacle appears
         this.width = 80
         this.height = 60
-
     }
 
     collision(playerInfo) {
@@ -25,15 +24,13 @@ class Obstacle {
         } else {
             // 
             game.player.score += 10
-            console.log(game.player.score);
 
             if (game.player.score == 50) {
                 this.gameWon()
             }
-
             return true
-        }
-    }
+        } 
+    } // close collision
 
     draw() {
         this.x -= 10; // the speed at which they cross the screen horizontally
@@ -46,7 +43,7 @@ class Obstacle {
             // reset to it's starting position
             this.y = height - this.height;
 
-        }
+        } // close draw
 
         image(this.image, this.x, this.y, this.width, this.height);
     }
@@ -60,5 +57,5 @@ class Obstacle {
         text("That's enough puppies, Score = " + game.player.score, width / 2, height / 2 - 40)
         text("press 'r' to replay", width / 2, height / 2 + 20)
         noLoop()
-    }
+    } // close game won 
 }

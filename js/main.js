@@ -6,12 +6,12 @@ function preload() {
 
 function setup() {
     mode = 0;
-    createCanvas(900, 700);
+    createCanvas(900, 600);
     game.setup()
 }
 
 function windowResized() {
-    resizeCanvas(900, 700)
+    resizeCanvas(900, 600)
 }
 
 function draw() {

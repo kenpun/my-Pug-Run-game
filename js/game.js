@@ -4,8 +4,7 @@ class Game {
         this.backgroundImages
         this.puppyImage
         this.peanutButterImage
-        this.backgroundSong
-        this.arcadeFont
+        //this.backgroundSong
     }
     
     preload() {
@@ -18,7 +17,7 @@ class Game {
         this.playerImage = loadImage('assets/player/resized-pug.gif')
         this.puppyImage = loadImage('assets/obstacle/resized-pug.gif')
         this.peanutButterImage = loadImage('assets/obstacle/peanut_butter.png')
-    }
+    } // close preload
     
     setup() {
         this.player = new Player()
@@ -32,7 +31,7 @@ class Game {
         stroke(0)
         strokeWeight(15);
         rect(width/2, height/2, width, height)
-    }
+    } // close setup
  
     draw() {
         clear()
@@ -92,7 +91,7 @@ class Game {
         text(game.player.score, 170, 40);
 
         
-    }
+    } // close draw
 
     
 
