@@ -36,7 +36,7 @@ class Obstacle {
     }
 
     draw() {
-        this.x -= 5;
+        this.x -= 10; // the speed at which they cross the screen horizontally
 
         this.velocity += this.gravity
         this.y += this.velocity

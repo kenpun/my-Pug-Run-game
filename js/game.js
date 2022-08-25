@@ -37,16 +37,14 @@ class Game {
     }
  
     draw() {
-        // console.log('game drawing');
-        //clear()
+        clear()
         if (this.playMode){ // adds the pause and play effect
             this.backgroundSong.play()
             this.background.draw()
-            // this.box.draw()
             this.player.draw()
             // here we add obstacles array
             // frameCount - this is provided by p5 determining the spacing between obstacles
-            if (frameCount % 100 === 0) {
+            if (frameCount % 150 === 0) {
             this.obstacles.push(new Obstacle(this.puppyImage))
             }
             // iterate over the obstacles array and call the draw function for every obstacle inside
@@ -62,7 +60,6 @@ class Game {
                 }
             })
 
- 
             if (frameCount % 20 === 0) {
                 this.barriers.push(new Barrier(this.peanutButterImage))
             }
