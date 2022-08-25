@@ -51,4 +51,8 @@ class Player {
         }
     }
 
+    moveDown() {
+        this.velocity = 5
+    }
+
 }

@@ -3,7 +3,7 @@ class Game {
     constructor() {
         this.backgroundImages
         this.puppyImage
-        this.mushroomImage
+        this.peanutButterImage
         this.backgroundSong
         this.arcadeFont
         this.button
@@ -18,8 +18,7 @@ class Game {
         this.arcadeFont = loadFont('assets/font/arcadefont.TTF')
         this.playerImage = loadImage('assets/player/resized-pug.gif')
         this.puppyImage = loadImage('assets/obstacle/resized-pug.gif')
-        this.mushroomImage = loadImage('assets/obstacle/peanut_butter.png')
-
+        this.peanutButterImage = loadImage('assets/obstacle/peanut_butter.png')
     }
     
     setup() {
@@ -63,9 +62,9 @@ class Game {
                 }
             })
 
-
-            if (frameCount % 100 === 0) {
-                this.barriers.push(new Barrier(this.mushroomImage))
+ 
+            if (frameCount % 20 === 0) {
+                this.barriers.push(new Barrier(this.peanutButterImage))
             }
             // iterate over the barriers array and call the draw function for every barrier inside
             this.barriers.forEach(function(barrier) {

@@ -9,6 +9,10 @@ function setup() {
     game.setup()
 }
 
+function windowResized() {
+    resizeCanvas(700, 700)
+}
+
 function draw() {
     game.draw()
 }
@@ -39,5 +43,8 @@ function keyPressed() {
         game.player.moveLeft()
     }
 
+    if (keyCode === 40) {
+        game.player.moveDown()
+    }
 
 }
