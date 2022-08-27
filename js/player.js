@@ -28,10 +28,9 @@ class Player {
     jump() {
         // console.log('jump');
         if (this.y == height - this.height) {
-        // will only allow jumping when at the the position of the player is at the bottom
         this.velocity = - 20;
-        }
-    }
+        } // will only allow jumping when at the the position of the player is at the bottom
+    } // close jump
         // possible to wrap this in an if condition and only
         // execute if player is not jumping.
         // once jump is pressed set this to true and set when to false when back
@@ -41,18 +40,18 @@ class Player {
         this.x += 50;
         if (this.x > width - this.width) {
         this.x = width - this.width
-        }
+        } // player won't leave the right side of the screen
     }
 
     moveLeft() {
         this.x -= 50;
         if (this.x < 0) {
             this.x = 0;
-        }
+        } //  player won't leave the left side of the screen
     }
 
     moveDown() {
         this.velocity = 5
-    }
+    } // close move down
 
 }

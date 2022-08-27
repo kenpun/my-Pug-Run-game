@@ -57,7 +57,7 @@ class Game {
                 }
             })
 
-            if (frameCount % 20 === 0) {
+            if (frameCount % 15 === 0) {
                 this.obstacles.push(new Obstacle(this.peanutButterImage))
             }
             // iterate over the obstacles array and call the draw function for every obstacle inside
@@ -95,4 +95,4 @@ class Game {
 
     
 
-}
+}// close Game class

@@ -7,9 +7,6 @@ function preload() {
 function setup() {
     mode = 0;
     let cnv = createCanvas(900, 600);
-    // let x = (windowWidth - width / 2)
-    // let y = (windowHeight - height / 2)
-    // cnv.position(x, y);
     cnv.parent('sketch-holder');
     game.setup()
 }
@@ -19,7 +16,7 @@ function windowResized() {
 }
 
 function draw() {
-    clear();
+    // clear();
     if (mode == 0) {
         fill(106, 13, 173, 255);
         rect(0, 0, width, height);

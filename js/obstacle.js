@@ -26,7 +26,7 @@ class Obstacle {
             } // game over condition is true
         } 
             return true
-    }
+    } //close collision
     
     draw() {
         this.x -= 5; 

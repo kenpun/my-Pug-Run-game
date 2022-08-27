@@ -9,6 +9,19 @@ class Collectable {
         this.height = 60
     }
 
+    draw() {
+        this.x -= 10; // the speed at which they cross the screen horizontally
+        this.velocity += this.gravity
+        this.y += this.velocity
+        // if collectable moves lower than the bottom of the canvas we need to correct 
+        // it's position
+        if (this.y >= height - this.height) {
+            // reset to it's starting position
+            this.y = height - this.height;
+        }
+        image(this.image, this.x, this.y, this.width, this.height);
+    }// close draw
+
     collision(playerInfo) {
         // console.log('collision', playerInfo);
         // get the middle of the player
@@ -25,28 +38,12 @@ class Collectable {
             // 
             game.player.score += 10
 
-            if (game.player.score == 50) {
+            if (game.player.score == 100) {
                 this.gameWon()
             }
             return true
         } 
     } // close collision
-
-    draw() {
-        this.x -= 10; // the speed at which they cross the screen horizontally
-
-        this.velocity += this.gravity
-        this.y += this.velocity
-        // if collectable moves lower than the bottom of the canvas we need to correct 
-        // it's position
-        if (this.y >= height - this.height) {
-            // reset to it's starting position
-            this.y = height - this.height;
-
-        } // close draw
-
-        image(this.image, this.x, this.y, this.width, this.height);
-    }
 
     gameWon(){
         fill(0, 0, 0, 100);
@@ -58,4 +55,5 @@ class Collectable {
         text("press 'r' to replay", width / 2, height / 2 + 20)
         noLoop()
     } // close game won 
+    
 }
